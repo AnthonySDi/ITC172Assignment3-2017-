@@ -14,12 +14,16 @@ public partial class _Default : System.Web.UI.Page
 
     protected void LoginButton_Click(object sender, EventArgs e)
     {
+        //initialize the loginClass and pass it the user and password
         LoginClass lc = new LoginClass(UserTextBox.Text, PasswordTextBox.Text);
-        int key = lc.ValidateLogin();
+        int key = lc.ValidateLogin(); //call the validation method
         if(key != 0)
         {
-            ResultLabel.Text = "Welcome";
+            //if the login is good save the key to a session variable
             Session["userKey"] = key;
+            //redirect to the other page
+            Response.Redirect("GrantRequests.aspx");
+
         }
         else
         {
