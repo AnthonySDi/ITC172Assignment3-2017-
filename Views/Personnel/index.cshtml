@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Assignment7.Models.PersonLite>
+
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>index</h2>
+
+<table style="width:100%;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(Model => Model.PersonKey )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.LastName )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.FirstName )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Email )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Apartment )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Street )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.City )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.State )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Zipcode )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.HomePhone )
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.WorkPhone )
+        </th>
+    </tr>
+    @foreach (var Item in Model)
+    {
+        <tr>
+                <td>
+                    @Html.DisplayFor(Model => Item.PersonKey)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.Apartment)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => Item.Zipcode)
+                </td>
+        </tr>
+    }
+</table>
